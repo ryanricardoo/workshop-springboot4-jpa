@@ -1,5 +1,6 @@
 package com.educandoweb.course.resources;
 
+import java.net.URI;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.educandoweb.course.entities.User;
 import com.educandoweb.course.services.UserService;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
 
 @RestController // Prepara a classe para receber requisição http
 @RequestMapping(value = "/users") // Rota ou caminho para o recurso, tudo relacionado a usuários passará por esse
@@ -31,5 +37,11 @@ public class UserResource {
         User obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
         }
-    }
 
+    @PostMapping
+    public ResponseEntity<User> insert(@RequestBody User obj){
+        obj = service.insert(obj);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
+        return ResponseEntity.created(uri).body(obj);
+    }
+}
