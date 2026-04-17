@@ -51,34 +51,49 @@ O sistema foi estruturado com base em uma modelagem de domínio robusta para gar
 
 ## Relacionamentos de Entidades
 Usuário e Pedido: Associação de um para muitos.
+
 Pedido e Item de Pedido: Composição de itens dentro de uma ordem de venda.
+
 Produto e Categoria: Relacionamento muitos para muitos para classificação de catálogo.
+
 Pedido e Pagamento: Associação um para um para registro de transação financeira.
 
 ## Execução da Aplicação
 **Pré-requisitos:**
 Java JDK 21 ou superior.
+
 Maven 3.8 ou superior.
+
 Git para controle de versão.
 
 ## Instruções de Instalação
 Clonar o repositório: git clone https://github.com/seu-usuario/repositorio.git
+
 Acessar o diretório do projeto: cd nome-do-projeto
+
 Realizar o build do projeto: mvn clean install
+
 Executar a aplicação: mvn spring-boot:run
+
 *A API estará operando no endereço padrão: http://localhost:8080.*
 
 ## Endpoints Principais
 Gestão de Usuários (/users)
 GET /users - Recuperação de todos os registros de usuários.
+
 GET /users/{id} - Consulta de usuário por identificador único.
+
 POST /users - Persistência de um novo usuário.
+
 PUT /users/{id} - Atualização de dados cadastrais (Otimizado com getReferenceById).
+
 DELETE /users/{id} - Exclusão de registro com validação de integridade.
 
 ## Pedidos e Catálogo
 **GET /orders -** Listagem de ordens de serviço e status.
+
 **GET /products -** Consulta ao catálogo de produtos.
+
 **GET /categories -** Consulta às categorias cadastradas.
 
 ## Autor
