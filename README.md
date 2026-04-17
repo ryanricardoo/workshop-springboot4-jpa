@@ -98,3 +98,5 @@ DELETE /users/{id} - Exclusão de registro com validação de integridade.
 
 ## Autor
 Ryan Ricardo Nunes Tavares
+
+https://www.linkedin.com/in/ryan-ricardo-222b6b2a4/
