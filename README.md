@@ -46,8 +46,10 @@ src/main/java/com/educandoweb/course/
 O sistema foi estruturado com base em uma modelagem de domínio robusta para garantir a integridade das informações.
 
 ## Modelo Conceitual (Domain Model)
+![Domain Model](./images/domain-model.png)
 
 ## Instância do Domínio (Domain Instance)
+![Domain Instance](./images/domain-instance.png)
 
 ## Relacionamentos de Entidades
 Usuário e Pedido: Associação de um para muitos.
